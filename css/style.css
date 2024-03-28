@@ -1,3 +1,7 @@
+#hero, #footer { 
+    display: none;
+}
+
 body {
     margin: 0;
     font-size: 16px;
@@ -8,74 +12,109 @@ body.dark {
     background-color: #222222;
 }
 
-@media (min-width: 0px) {
+.dark-mode-button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.track {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    background-color: #ebebeb89;
+    box-shadow: 1px 1px 3px #a9a9a987;
+    border-radius: 20px;
+    border: none;
+}
+
+.toggle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff9617;
+    border-radius: 50%;
+    margin-left: -6px;
+    box-shadow: 2px 2px 5px darkgray;
+    border: none;
+    transition: transform .21s ease-in;
+}
+
+.toggle-dark {
+    transform: translateX(calc(100% + 3px));
+    box-shadow: 2px 2px 5px black;
+}
+
+.track-dark {
+    background-color: white;
+    box-shadow: 3px 3px 5px black;
+}
+
+.track-light::after {
+    content: "DARK";
+    position: relative;
+    top: 25px;
+    margin-left: -2px;
+}
+
+.track-dark::after {
+    content: "LIGHT";
+    position: relative;
+    color: white;
+    top: 25px;
+    margin-left: -2px;
+}
+
+.nav-li a{
+    color: #393939;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.nav-li svg {
+    height: 1.5em;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+body.dark .nav-sidebar {
+    background-color: #393939;
+}
+
+body.dark .nav-li:hover {
+    background-color: #222222;
+}
+
+body.dark .nav-li a{
+    color: #dddada;
+}
+
+body.dark .nav-li svg {
+    filter: invert(92%) sepia(84%) saturate(18%) hue-rotate(277deg) brightness(112%) contrast(91%);
+}
+
+body.dark #logo, body.dark .logo {
+    filter: invert(100%) sepia(1%) saturate(159%) hue-rotate(74deg) brightness(114%) contrast(92%);    
+}
+
+@media (max-width: 600px) {
     header {
         display: flex;
         justify-content: space-around;
         align-items: center;
         padding: 5px;
     }
-   
 
-    #mobile-logo {
+    .logo {
         margin-top: 2em;
-    }
-
-    .dark-mode-button {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        border: none;
-        background-color: transparent;
-    }
-
-    .track {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        width: 40px;
-        height: 20px;
-        background-color: #ebebeb89;
-        box-shadow: 1px 1px 3px #a9a9a987;
-        border-radius: 20px;
-        border: none;
-    }
-
-    .toggle {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: #ff9617;
-        border-radius: 50%;
-        margin-left: -6px;
-        box-shadow: 2px 2px 5px darkgray;
-        border: none;
-        transition: transform .21s ease-in;
-    }
-
-    .toggle-dark {
-        transform: translateX(calc(100% + 3px));
-        box-shadow: 2px 2px 5px black;
-    }
-
-    .track-dark {
-        background-color: white;
-        box-shadow: 3px 3px 5px black;
-    }
-
-    .track-light::after {
-        content: "DARK";
-        position: relative;
-        top: 25px;
-        margin-left: -2px;
-    }
-
-    .track-dark::after {
-        content: "LIGHT";
-        position: relative;
-        color: white;
-        top: 25px;
-        margin-left: -2px;
+        height: 80px;
     }
 
     .hamburger-menu {
@@ -89,7 +128,6 @@ body.dark {
         background-color: transparent;
         padding: 5px;
         margin: 10px;
-
     }
 
     .hamburger-box {
@@ -121,11 +159,11 @@ body.dark {
         width: 60vw;
         height: 100vh;
         background-color: whitesmoke;
-        transition: translate 1s;
+        transition: translate .5s ease-out;
         translate: -110%;
     }
     .nav-sidebar.active {
-        transition: translate 1s;
+        transition: translate .5s ease-in;
         translate: 0%;
     }
 
@@ -159,13 +197,6 @@ body.dark {
         margin-left: -35px;
     }
 
-    .nav-li a{
-        color: #393939;
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-
     .nav-li {
         height: 3em;
         display: grid;
@@ -183,35 +214,55 @@ body.dark {
         padding-right: 10px;
     }
 
-    .nav-li svg {
-        height: 1.5em;
+}
+
+@media (min-width: 601px) {
+    
+    header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
     }
 
-    #hero, #footer { 
+    .dark-mode-button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border: none;
+        background-color: transparent;
+    }
+    
+    .hamburger-menu, .close-sidebar {
         display: none;
     }
 
-    body.dark .nav-sidebar {
-        background-color: #393939;
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
-    body.dark .nav-li:hover {
-        background-color: #222222;
+    .nav-li {
+        margin-right: 10px;
     }
 
-    body.dark .nav-li a{
-        color: #dddada;
+    .nav-li svg {
+        display: none;
     }
 
-    body.dark .nav-li svg {
-        filter: invert(92%) sepia(84%) saturate(18%) hue-rotate(277deg) brightness(112%) contrast(91%);
-    }
-    
-    body.dark #logo, body.dark #mobile-logo {
-        filter: invert(100%) sepia(1%) saturate(159%) hue-rotate(74deg) brightness(114%) contrast(92%);    
+    .logo {
+        margin-top: .5em;
+        height: 100px;
     }
 
+    .nav-sidebar {
+        display: flex;
+    }
+
+    #mobile-logo {
+        display: none;
+    }
 }
-
 
  /* colors:  #0813e6(blue), #393939(dark gray) */
