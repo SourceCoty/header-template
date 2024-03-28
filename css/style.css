@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family:sans-serif;
+}
+
+body.dark {
+    background-color: #222222;
+}
+
+@media (min-width: 0px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+    }
+   
+
+    #mobile-logo {
+        margin-top: 2em;
+    }
+
+    .dark-mode-button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border: none;
+        background-color: transparent;
+    }
+
+    .track {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 40px;
+        height: 20px;
+        background-color: #ebebeb89;
+        box-shadow: 1px 1px 3px #a9a9a987;
+        border-radius: 20px;
+        border: none;
+    }
+
+    .toggle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #ff9617;
+        border-radius: 50%;
+        margin-left: -6px;
+        box-shadow: 2px 2px 5px darkgray;
+        border: none;
+        transition: transform .21s ease-in;
+    }
+
+    .toggle-dark {
+        transform: translateX(calc(100% + 3px));
+        box-shadow: 2px 2px 5px black;
+    }
+
+    .track-dark {
+        background-color: white;
+        box-shadow: 3px 3px 5px black;
+    }
+
+    .track-light::after {
+        content: "DARK";
+        position: relative;
+        top: 25px;
+        margin-left: -2px;
+    }
+
+    .track-dark::after {
+        content: "LIGHT";
+        position: relative;
+        color: white;
+        top: 25px;
+        margin-left: -2px;
+    }
+
+    .hamburger-menu {
+        border: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: transparent;
+        padding: 5px;
+        margin: 10px;
+
+    }
+
+    .hamburger-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger {
+        width: 20px;
+        height: 2px;
+        background-color: darkgray;
+        margin: 3px;
+    }
+
+    .hamburger-menu:hover {
+        background-color: #cacaca99;
+    }
+
+    .hamburger-menu:hover .hamburger {
+        background-color: black;
+    }
+
+    .nav-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        height: 100vh;
+        background-color: whitesmoke;
+        transition: translate 1s;
+        translate: -110%;
+    }
+    .nav-sidebar.active {
+        transition: translate 1s;
+        translate: 0%;
+    }
+
+    .close-sidebar {
+        translate: 61vw;
+        font-size: 25px;
+        color: darkgray;
+        background-color: transparent;
+        position: absolute;
+        top: 43px;
+        border: none;
+    }
+
+    .close-sidebar:hover {
+        background-color: #cacaca99;
+        color: black;
+        border-radius: 5px; 
+    }
+
+    .nav-wrapper { 
+        padding: 20px;
+    }
+
+    .nav-menu {
+        list-style: none;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        margin-left: -35px;
+    }
+
+    .nav-li a{
+        color: #393939;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .nav-li {
+        height: 3em;
+        display: grid;
+        grid-template-columns: 2.5em 1fr;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        margin-left: -10px;
+    }
+
+    .nav-li:hover {
+        background-color: #cacaca99;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-li svg {
+        height: 1.5em;
+    }
+
+    #hero, #footer { 
+        display: none;
+    }
+
+    body.dark .nav-sidebar {
+        background-color: #393939;
+    }
+
+    body.dark .nav-li:hover {
+        background-color: #222222;
+    }
+
+    body.dark .nav-li a{
+        color: #dddada;
+    }
+
+    body.dark .nav-li svg {
+        filter: invert(92%) sepia(84%) saturate(18%) hue-rotate(277deg) brightness(112%) contrast(91%);
+    }
+    
+    body.dark #logo, body.dark #mobile-logo {
+        filter: invert(100%) sepia(1%) saturate(159%) hue-rotate(74deg) brightness(114%) contrast(92%);    
+    }
+
+}
+
+
+ /* colors:  #0813e6(blue), #393939(dark gray) */
