@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-size: 16px;
     font-family:sans-serif;
+    width: 100vw;
 }
 
 body.dark {
@@ -104,7 +105,7 @@ body.dark #logo, body.dark .logo {
     filter: invert(100%) sepia(1%) saturate(159%) hue-rotate(74deg) brightness(114%) contrast(92%);    
 }
 
-@media (max-width: 600px) {
+@media (max-width: 779px) {
     header {
         display: flex;
         justify-content: space-around;
@@ -170,23 +171,27 @@ body.dark #logo, body.dark .logo {
         height: 100vh;
         background-color: whitesmoke;
         box-shadow:0 0 0 10000px rgba(0,0,0,.50);
+    }
 
+    .nav-sidebar.active .toggle{
+        box-shadow: none;
     }
 
     .close-sidebar {
         translate: 61vw;
         font-size: 25px;
-        color: darkgray;
-        background-color: transparent;
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 5px;
         position: absolute;
         top: 43px;
         border: none;
     }
 
     .close-sidebar:hover {
-        background-color: #cacaca99;
-        color: black;
-        border-radius: 5px; 
+        background-color: rgb(45, 44, 44);
+        color: whitesmoke;
+        border-radius: 5px;
     }
 
     .nav-wrapper { 
@@ -222,11 +227,11 @@ body.dark #logo, body.dark .logo {
 
 }
 
-@media (min-width: 601px) {
+@media (min-width: 780px) {
     
     header { 
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 110px 1fr 50px;
         align-items: center;
         padding: 20px;
         border-bottom: #a9a9a987 solid 1px;
@@ -238,20 +243,25 @@ body.dark #logo, body.dark .logo {
         align-content: center;
         border: none;
         background-color: transparent;
+        margin-left: 1em;
     }
     
     .hamburger-menu, .close-sidebar {
         display: none;
     }
 
+    .nav-sidebar {
+        display: flex;
+        justify-content: end;
+    }
+
     .nav-menu {
         display: flex;
-        justify-content: center;
         align-items: end;
     }
 
     .nav-li {
-        margin-right: 10px;
+        margin-right: 30px;
     }
 
     .nav-li svg {
