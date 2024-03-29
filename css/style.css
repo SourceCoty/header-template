@@ -155,16 +155,20 @@ body.dark #logo, body.dark .logo {
     .nav-sidebar {
         position: absolute;
         top: 0;
+        left:-100%;
+        width: 60vw;
+        height: 100vh;
+        background-color: whitesmoke;
+        transition: .5s ease-in-out; 
+    }
+
+    .nav-sidebar.active {
+        position: absolute;
+        top: 0;
         left: 0;
         width: 60vw;
         height: 100vh;
         background-color: whitesmoke;
-        transition: translate .5s ease-out;
-        translate: -110%;
-    }
-    .nav-sidebar.active {
-        transition: translate .5s ease-in;
-        translate: 0%;
     }
 
     .close-sidebar {
@@ -223,6 +227,7 @@ body.dark #logo, body.dark .logo {
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+        border-bottom: #a9a9a987 solid 1px;
     }
 
     .dark-mode-button {
