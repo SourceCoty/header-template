@@ -159,7 +159,7 @@ body.dark #logo, body.dark .logo {
         width: 60vw;
         height: 100vh;
         background-color: whitesmoke;
-        transition: .5s ease-in-out; 
+        transition: .3s ease-in-out; 
     }
 
     .nav-sidebar.active {
@@ -169,6 +169,8 @@ body.dark #logo, body.dark .logo {
         width: 60vw;
         height: 100vh;
         background-color: whitesmoke;
+        box-shadow:0 0 0 10000px rgba(0,0,0,.50);
+
     }
 
     .close-sidebar {
