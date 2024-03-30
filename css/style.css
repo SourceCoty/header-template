@@ -229,12 +229,29 @@ body.dark #logo, body.dark .logo {
 
 @media (min-width: 780px) {
     
+    body.dark .nav-sidebar {
+        background-color: transparent;
+    }
+
+    .nav-li a:hover {
+        color: #ff9617;
+        text-underline-offset: 10px;
+        text-decoration: underline 3px #ff9617; 
+
+    }
+
+    body.dark .nav-li a:hover {
+        color: #ff9617
+    }
+
+
     header { 
         display: grid;
         grid-template-columns: 110px 1fr 50px;
         align-items: center;
         padding: 20px;
-        border-bottom: #a9a9a987 solid 1px;
+        border-bottom: #a9a9a91e solid 1px;
+        height: 95px;
     }
 
     .dark-mode-button {
