@@ -5,6 +5,7 @@ let hamburgerMenu = document.querySelector(".hamburger-menu")
 let sidebar = document.querySelector(".nav-sidebar");
 let sidebarBtn = document.querySelector(".close-sidebar");
 let body = document.querySelector("body");
+let header = document.querySelector("header");
 
 track.addEventListener("click", () => {
     if (toggle.className === "toggle toggle-light") {
@@ -22,8 +23,10 @@ track.addEventListener("click", () => {
 hamburgerMenu.addEventListener("click", () => {
     if (sidebar.className === "nav-sidebar") {
         sidebar.className = "nav-sidebar active"
+        header.className = "sidebar"
     } else {
         sidebar.className = "nav-sidebar";
+        header.className = "";
     }
 })
 

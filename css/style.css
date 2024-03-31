@@ -1,16 +1,23 @@
-#hero, #footer { 
+#hero{ 
     display: none;
 }
-
+/* UNIVERSAL */ 
 body {
     margin: 0;
     font-size: 16px;
     font-family:sans-serif;
-    width: 100vw;
 }
 
 body.dark {
     background-color: #222222;
+}
+
+body.dark .logo:hover {
+    filter: invert(79%) sepia(33%) saturate(6291%) hue-rotate(346deg) brightness(100%) contrast(103%);
+}
+
+.logo:hover {
+    filter: invert(79%) sepia(33%) saturate(6291%) hue-rotate(346deg) brightness(100%) contrast(103%);
 }
 
 .dark-mode-button {
@@ -85,6 +92,43 @@ body.dark {
     list-style: none;
 }
 
+footer {
+    background-color: #f4f4f4ad;
+    height: 20em;
+    display: grid;
+    grid-template-rows: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color:black;
+}
+
+.footer.wrapper {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+footer .contact-group{
+    display: grid;
+    grid-template-rows: 1fr 1em 1em 1em;
+}
+
+footer .contact-group .contact {
+
+    padding-bottom: 1em;
+}
+
+footer a{
+    text-decoration: none;
+    color:black;
+}
+
+footer li{
+    list-style: none;
+    color: black;
+}
+
 body.dark .nav-sidebar {
     background-color: #393939;
 }
@@ -101,10 +145,11 @@ body.dark .nav-li svg {
     filter: invert(92%) sepia(84%) saturate(18%) hue-rotate(277deg) brightness(112%) contrast(91%);
 }
 
-body.dark #logo, body.dark .logo {
+body.dark .logo {
     filter: invert(100%) sepia(1%) saturate(159%) hue-rotate(74deg) brightness(114%) contrast(92%);    
 }
 
+/* MOBILE */
 @media (max-width: 779px) {
     header {
         display: flex;
@@ -171,9 +216,10 @@ body.dark #logo, body.dark .logo {
         height: 100vh;
         background-color: whitesmoke;
         box-shadow:0 0 0 10000px rgba(0,0,0,.50);
+        z-index: 2;
     }
 
-    .nav-sidebar.active .toggle{
+    header.sidebar .toggle{
         box-shadow: none;
     }
 
@@ -192,6 +238,10 @@ body.dark #logo, body.dark .logo {
         background-color: rgb(45, 44, 44);
         color: whitesmoke;
         border-radius: 5px;
+    }
+
+    body.dark .close-sidebar:hover {
+        background-color: #393939;
     }
 
     .nav-wrapper { 
@@ -243,7 +293,6 @@ body.dark #logo, body.dark .logo {
     body.dark .nav-li a:hover {
         color: #ff9617
     }
-
 
     header { 
         display: grid;
