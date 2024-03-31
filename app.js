@@ -6,17 +6,20 @@ let sidebar = document.querySelector(".nav-sidebar");
 let sidebarBtn = document.querySelector(".close-sidebar");
 let body = document.querySelector("body");
 let header = document.querySelector("header");
+let footer = document.querySelector("footer")
 
 track.addEventListener("click", () => {
     if (toggle.className === "toggle toggle-light") {
         toggle.className = "toggle toggle-dark";
         track.className = "track track-dark";
         body.className = "dark";
+        footer.className = "dark";
         
     } else {
         toggle.className = "toggle toggle-light";
         track.className = "track track-light";
         body.className = "";
+        footer.className = "";
     }
 })
 
